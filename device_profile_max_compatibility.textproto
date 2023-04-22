@@ -1,0 +1,309 @@
+# This is a generic device profile that has been optimized for maximum
+# compatibility. See https://github.com/tomthecarrot/arcore-for-all/issues/139
+# for hints at using this file.
+cameras {
+  # Android camera ID of the back-facing camera.
+  # Camera 0 is usually safe to assume as a back-facing camera, but some devices
+  # may require an alternate camera to be selected.
+  camera_id: "0"
+  camera_direction: REAR_FACING
+  rolling_shutter_readout_time_nanoseconds: 33333333
+  rolling_shutter_direction: POS_Y_READOUT
+  camera_timestamp_alignment_nanoseconds: 0
+  calibrated_width: 640
+  calibrated_height: 480
+  calibrated_focal_length {
+    # Focal length is measured in pixels.
+    # This must be changed to a reasonable value for the device.
+    x: 512.0
+    y: 512.0
+  }
+  calibrated_principal_point {
+    x: 320.0
+    y: 240.0
+  }
+  distortion_poly3 {
+    k0: 0.0
+    k1: 0.0
+    k2: 0.0
+  }
+  # Also possible: END_OF_EXPOSURE
+  exposure_timestamp_meaning: BEGINNING_OF_EXPOSURE
+  stream_groups {
+    streams {
+      stream_types {
+        usage: FEATURE_TRACKING
+        ordinal: 0
+      }
+      format: YUV_420_888
+      supported_resolutions {
+        width: 640
+        height: 480
+      }
+    }
+    streams {
+      stream_types {
+        usage: AUXILIARY_CV
+        ordinal: 0
+      }
+      format: YUV_420_888
+      supported_resolutions {
+        width: 640
+        height: 480
+      }
+      # Additional CPU texture resolutions.  On most devices 16:9 resolutions
+      # will work, however some devices need these to be 4:3 for things to work
+      # well.
+      supported_resolutions {
+        width: 1280
+        height: 720
+      }
+      supported_resolutions {
+        width: 1920
+        height: 1080
+      }
+    }
+    streams {
+      stream_types {
+        usage: AR_PASSTHROUGH
+        ordinal: 0
+      }
+      format: PRIVATE
+      # Resolution of the texture.  On most devices 1920x1080 will work, however
+      # some devices need this to be 4:3 for things to work well.  Suggested
+      # resoltuions to try are 2048x1536 and 1920x1440.
+      supported_resolutions {
+        width: 1920
+        height: 1080
+      }
+    }
+    supported_frame_rates {
+      min_fps: 30
+      max_fps: 30
+    }
+  }
+  # Changing to TRUSTED_AS_BOOTTIME may improve performance on some devices.
+  camera_timebase_trust_level: RUNTIME_CHECK_REQUIRED
+  # Changing to IMAGE_METADATA will improve performance on most devices.
+  rolling_shutter_data_source: DEVICE_PROFILE
+  depth_api_support_mode: DEPTH_API_SUPPORT_MODE_UNSUPPORTED
+}
+cameras {
+  # Many devices will need a different camera specified for front-facing.
+  camera_id: "1"
+  camera_direction: FRONT_FACING
+  rolling_shutter_readout_time_nanoseconds: 33333333
+  rolling_shutter_direction: POS_Y_READOUT
+  calibrated_width: 640
+  calibrated_height: 480
+  calibrated_focal_length {
+    x: 512.0
+    y: 512.0
+  }
+  calibrated_principal_point {
+    x: 320.0
+    y: 240.0
+  }
+  distortion_poly3 {
+    k0: 0.0
+    k1: 0.0
+    k2: 0.0
+  }
+  exposure_timestamp_meaning: BEGINNING_OF_EXPOSURE
+  stream_groups {
+    streams {
+      stream_types {
+        usage: FEATURE_TRACKING
+        ordinal: 0
+      }
+      stream_types {
+        usage: AUXILIARY_CV
+        ordinal: 0
+      }
+      format: YUV_420_888
+      supported_resolutions {
+        width: 640
+        height: 480
+      }
+    }
+    streams {
+      stream_types {
+        usage: AR_PASSTHROUGH
+        ordinal: 0
+      }
+      format: PRIVATE
+      supported_resolutions {
+        width: 1920
+        height: 1080
+      }
+    }
+    supported_frame_rates {
+      min_fps: 10
+      max_fps: 30
+    }
+  }
+  camera_timebase_trust_level: RUNTIME_CHECK_REQUIRED
+  rolling_shutter_data_source: DEVICE_PROFILE
+  depth_api_support_mode: DEPTH_API_SUPPORT_MODE_UNSUPPORTED
+}
+imus {
+  key: 100
+  value {
+    gyro_scale {
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    }
+    gyro_misalignment {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    }
+    accel_scale {
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    }
+    accel_misalignment {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    }
+    gyro_q_accel {
+      w: 1.0
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    }
+    # These are generous placeholders used in most official devices profiles.
+    gyro_noise_sigma: 0.0005309
+    gyro_bias_sigma: 0.0001413
+    accel_noise_sigma: 0.0048836
+    accel_bias_sigma: 0.0125893
+    default_gyro_bias {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    }
+    default_accel_bias {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    }
+    gyro_timestamp_alignment_nanoseconds: 0
+    accel_timestamp_alignment_nanoseconds: 0
+    # Changing to GYROSCOPE_UNCALIBRATED will improve performance on most
+    # devices.
+    gyro_type: GYROSCOPE_CALIBRATED
+  }
+}
+camera_extrinsics {
+  frame_id: IMU_0
+  # Same as camera ID in REAR_FACING cameras block.
+  camera_id: "0"
+  frame_t_camera {
+    p {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    }
+    q {
+      # On devices with the back-facing camera mounted differently this may need
+      # to be changed, usually just making the x term positive.
+      w: 0.0
+      x: -0.70710678118654746
+      y: 0.70710678118654746
+      z: 0.0
+    }
+  }
+}
+camera_extrinsics {
+  frame_id: IMU_0
+  # Same as camera ID in FRONT_FACING cameras block.
+  camera_id: "1"
+  frame_t_camera {
+    p {
+      x: 0
+      y: 0
+      z: 0
+    }
+    q {
+      # On devices with the front-facing camera mounted differently this may
+      # need to be changed, usually just making the z term positive.
+      w: 0.70710678118654746
+      x: 0
+      y: 0
+      z: -0.70710678118654746
+    }
+  }
+}
+general_extrinsics {
+  frame_a_id: IMU_0
+  frame_b_id: CAMERA_ID_MOTION_TRACKING_PRIMARY
+  a_t_b {
+    # Copy from extrinsics for back-facing camera above.
+    p {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    }
+    q {
+      w: 0.0
+      x: -0.70710678118654746
+      y: 0.70710678118654746
+      z: 0.0
+    }
+  }
+}
+general_extrinsics {
+  frame_a_id: ANDROID_FRAME
+  frame_b_id: OPENGL
+  a_t_b {
+    p {
+      x: 0
+      y: 0
+      z: 0
+    }
+    q {
+      w: 0.70710678118654757
+      x: 0
+      y: 0
+      z: 0.70710678118654746
+    }
+  }
+}
+general_extrinsics {
+  frame_a_id: IMU_0
+  frame_b_id: ANDROID_FRAME
+  a_t_b {
+    p {
+      x: 0
+      y: 0
+      z: 0
+    }
+    q {
+      w: 1
+      x: 0
+      y: 0
+      z: 0
+    }
+  }
+}
+general_extrinsics {
+  frame_a_id: IMU_0
+  frame_b_id: CAMERA_ID_FRONT_MOTION_TRACKING_PRIMARY
+  a_t_b {
+    # Copy from extrinsics for front-facing camera above.
+    p {
+      x: 0
+      y: 0
+      z: 0
+    }
+    q {
+      w: 0.70710678118654746
+      x: 0
+      y: 0
+      z: -0.70710678118654746
+    }
+  }
+}
