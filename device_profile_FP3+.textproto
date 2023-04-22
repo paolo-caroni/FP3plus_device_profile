@@ -1,12 +1,19 @@
-# This is a generic device profile that has been optimized for maximum
-# compatibility. See https://github.com/tomthecarrot/arcore-for-all/issues/139
+# This is my first try to create an optimized FP3+ device profile.
+# I have started from original "device_profile_max_compatibility.textproto"
+# See https://github.com/tomthecarrot/arcore-for-all/issues/139
 # for hints at using this file.
+# The licence of this file is unclear, about my modification are released under public domain.
 cameras {
   # Android camera ID of the back-facing camera.
-  # Camera 0 is usually safe to assume as a back-facing camera, but some devices
-  # may require an alternate camera to be selected.
+  # Camera 0 rear/back-facing camera.
+  # Values for FP3+ module (Samsung S5KGM1SP03-FGX9)
+  # NOT for FP3 module (IMX363)
   camera_id: "0"
   camera_direction: REAR_FACING
+  # https://semiconductor.samsung.com/image-sensor/mobile-image-sensor/isocell-bright-gm1/
+  # Shutter Type Electronic Rolling Shutter and Global Reset
+  # maybe can be a problem, see:
+  # https://forum.fairphone.com/t/fairphone-3-increase-camera-exposure-time-camera-manual-controls/71914/8
   rolling_shutter_readout_time_nanoseconds: 33333333
   rolling_shutter_direction: POS_Y_READOUT
   camera_timestamp_alignment_nanoseconds: 0
@@ -14,15 +21,28 @@ cameras {
   calibrated_height: 480
   calibrated_focal_length {
     # Focal length is measured in pixels.
-    # This must be changed to a reasonable value for the device.
+    # f1.79 aperture https://en.wikipedia.org/wiki/F-number
+    # On FP3+ we have a wide-angle 84,2° so in pixel should be... (but is buggy and SURELY wrong)
+    # Focal = A/tan(a)
+    # A = 640/2 = 320, a = 84.2°/2 = 42.1°, which give Focal(x) =  103.0346 pixels.
+    # A = 480/2 = 240, a = 84.2°/2 = 42.1°, which give Focal(y) =  77.27595 pixels.
+    # ToDo: calculate with OpenCV camera calibration or other system
+    # https://learnopencv.com/camera-calibration-using-opencv/
+    # https://docs.opencv.org/3.4/d4/d94/tutorial_camera_calibration.html
+    # https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html
+    # https://boofcv.org/index.php?title=Applications#Camera_Calibration
+    # It seems that I need a chessboard...
     x: 512.0
     y: 512.0
   }
   calibrated_principal_point {
+    # ToDo: verify with OpenCV camera calibration
     x: 320.0
     y: 240.0
   }
   distortion_poly3 {
+    # Max compatibility profile values 0.0
+    # ToDo: Verify.
     k0: 0.0
     k1: 0.0
     k2: 0.0
@@ -62,6 +82,16 @@ cameras {
         width: 1920
         height: 1080
       }
+	  # ToDo: Improve supported_resolutions
+	  #supported_resolutions {
+        #width: 3840
+        #height: 2160
+      #}
+        # Max video resolution 4000 x 3000 (4K UHD)
+        #supported_resolutions {
+        #width: 4000
+        #height: 3000
+      #}
     }
     streams {
       stream_types {
@@ -78,18 +108,34 @@ cameras {
       }
     }
     supported_frame_rates {
+      # https://shop.fairphone.com/en/fairphone-3-camera-plus-module
+      # 4K video @ 30fps
+      # 1080p @ 120fps
+      # 720p @ 30fps
+      # https://semiconductor.samsung.com/image-sensor/mobile-image-sensor/isocell-bright-gm1/
+      # Normal Frame Rate Up to 30fps @12M full
+      # Video Frame Rate Up to 120fps @FHD, 240fps @HD
+      # Not clear... Maybe max_fps should be 120fps
+      # ToDo: Verify.
       min_fps: 30
       max_fps: 30
     }
   }
   # Changing to TRUSTED_AS_BOOTTIME may improve performance on some devices.
+  # ToDo: Verify.
   camera_timebase_trust_level: RUNTIME_CHECK_REQUIRED
   # Changing to IMAGE_METADATA will improve performance on most devices.
+  # ToDo: Verify.
   rolling_shutter_data_source: DEVICE_PROFILE
+  # FP3+ rear-facing camera should support depth API, since the Pixel 3a support it,
+  # not clear if need other config... or better CPU or other hardware in addition.
+  # ToDo: try DEPTH_API_SUPPORT_MODE_SUPPORTED
   depth_api_support_mode: DEPTH_API_SUPPORT_MODE_UNSUPPORTED
 }
 cameras {
-  # Many devices will need a different camera specified for front-facing.
+  # Camera 1 front-facing.
+  # Values for FP3+ module (Samsung S5K3P9SP)
+  # NOT for FP3 module (S5K4H7YX)
   camera_id: "1"
   camera_direction: FRONT_FACING
   rolling_shutter_readout_time_nanoseconds: 33333333
@@ -97,6 +143,13 @@ cameras {
   calibrated_width: 640
   calibrated_height: 480
   calibrated_focal_length {
+    # f2.0 aperture https://en.wikipedia.org/wiki/F-number
+    # Is a wide-angle 79,7° so in pixel should be... (but is buggy and SURELY wrong)
+    # Focal = A/tan(a)
+    # A = 640/2 = 320, a = 84.2°/2 = 39.85°, which give Focal(x) =  -209.6959 pixels.
+    # A = 480/2 = 240, a = 84.2°/2 = 39.85°, which give Focal(y) =  -157.2719 pixels.
+    # ToDo: calculate with OpenCV camera calibration or other system
+    # (Honestly I'm not interested in this sensor).
     x: 512.0
     y: 512.0
   }
@@ -138,17 +191,28 @@ cameras {
       }
     }
     supported_frame_rates {
+      # https://semiconductor.samsung.com/image-sensor/mobile-image-sensor/isocell-bright-3p9/
+      # Normal Frame Rate Up to 30fps @full
+      # Video Frame Rate  Up to 60fps @4MP (SN, SP), 180fps @VGA (SX)
+      # Not clear... Maybe max_fps should be 180fps
+      # ToDo: Verify (Honestly I'm not interested in this sensor).
       min_fps: 10
       max_fps: 30
     }
   }
+  # Changing to TRUSTED_AS_BOOTTIME may improve performance on some devices.
+  # ToDo: Verify.
   camera_timebase_trust_level: RUNTIME_CHECK_REQUIRED
+  # Changing to IMAGE_METADATA will improve performance on most devices.
+  # ToDo: Verify.
   rolling_shutter_data_source: DEVICE_PROFILE
   depth_api_support_mode: DEPTH_API_SUPPORT_MODE_UNSUPPORTED
 }
 imus {
   key: 100
   value {
+    # accel and gyro on FP3+ is a TDK ICM20602
+    # ToDo: verify settings, not sure how to do it.
     gyro_scale {
       x: 1.0
       y: 1.0
@@ -194,6 +258,7 @@ imus {
     accel_timestamp_alignment_nanoseconds: 0
     # Changing to GYROSCOPE_UNCALIBRATED will improve performance on most
     # devices.
+    # ToDo: try GYROSCOPE_UNCALIBRATED and GYROSCOPE_CALIBRATED differences.
     gyro_type: GYROSCOPE_CALIBRATED
   }
 }
