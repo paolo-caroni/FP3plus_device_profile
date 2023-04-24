@@ -38,7 +38,7 @@ IF unrooted on Android 11 or older
 
 IF rooted adb (Android 12 or later)
 - adb root
-- adb push custom_device_profile.textproto /data/data/com.google.ar.core/files/custom_device_profile.textproto
+- adb push device_profile_FP3+.textproto /data/data/com.google.ar.core/files/custom_device_profile.textproto
 
 Then
 - Run app that use ARCore and verify functionality of it;
