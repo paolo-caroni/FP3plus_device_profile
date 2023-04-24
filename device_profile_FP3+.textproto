@@ -82,8 +82,8 @@ cameras {
         width: 1920
         height: 1080
       }
-	  # ToDo: Improve supported_resolutions
-	  #supported_resolutions {
+	# ToDo: Improve supported_resolutions
+	#supported_resolutions {
         #width: 3840
         #height: 2160
       #}
@@ -115,18 +115,17 @@ cameras {
       # https://semiconductor.samsung.com/image-sensor/mobile-image-sensor/isocell-bright-gm1/
       # Normal Frame Rate Up to 30fps @12M full
       # Video Frame Rate Up to 120fps @FHD, 240fps @HD
-      # Not clear... Maybe max_fps should be 120fps
-      # ToDo: Verify.
+      # It seems that Normal frame rate should be used.
       min_fps: 30
       max_fps: 30
     }
   }
   # Changing to TRUSTED_AS_BOOTTIME may improve performance on some devices.
   # ToDo: Verify.
-  camera_timebase_trust_level: RUNTIME_CHECK_REQUIRED
+  camera_timebase_trust_level: TRUSTED_AS_BOOTTIME
   # Changing to IMAGE_METADATA will improve performance on most devices.
   # ToDo: Verify.
-  rolling_shutter_data_source: DEVICE_PROFILE
+  rolling_shutter_data_source: IMAGE_METADATA
   # FP3+ rear-facing camera should support depth API, since the Pixel 3a support it,
   # not clear if need other config... or better CPU or other hardware in addition.
   # ToDo: try DEPTH_API_SUPPORT_MODE_SUPPORTED
@@ -259,7 +258,7 @@ imus {
     # Changing to GYROSCOPE_UNCALIBRATED will improve performance on most
     # devices.
     # ToDo: try GYROSCOPE_UNCALIBRATED and GYROSCOPE_CALIBRATED differences.
-    gyro_type: GYROSCOPE_CALIBRATED
+    gyro_type: GYROSCOPE_UNCALIBRATED
   }
 }
 camera_extrinsics {
