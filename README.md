@@ -1,11 +1,17 @@
 # FP3plus_device_profile
 
-This repo contains the custom FairPhone 3+ profile for ARCore
+This repo contains the custom FairPhone 3+ profile for ARCore.
+
 Actually it is buggy and unprecise.
+
 If you are a noob please don't ask for help, don't ask an modified .apk or .ab (will be illegal) and ESPECIALLY don't ask Google support.
+
 Google's ARCore staff permit to "experiment" new unofficial devices as long as you don't ask for help or official support.
+
 If they receive requests they will remove the possibility for everyone, so please don't do it.
+
 If you need ARCore on your FairPhone but you have not the skill don't ask help, study.
+
 An unofficial help by FairPhone staff would be very appreciated but not pretended.
 
 ## For help me you need to:
@@ -19,7 +25,7 @@ An unofficial help by FairPhone staff would be very appreciated but not pretende
 
 ## How To Help:
 
-Fist
+First
 - Fork this repository;
 - Install ARCore on your FP3+ (I have installed fekened the Pixel 3a that is similar by hardware);
 
@@ -29,6 +35,7 @@ IF unrooted on Android 11 or older
 - Add the custom device profile a directory named f;
 - Repack CORRECTLY the modified backup;
 - "Restore" the modified backup of ARCore;
+
 IF rooted adb (Android 12 or later)
 - adb root
 - adb push custom_device_profile.textproto /data/data/com.google.ar.core/files/custom_device_profile.textproto
@@ -45,9 +52,13 @@ Then
 
 ARCore run, depth API disabled.
 Buggy and imprecise, need more calibration.
+
 If you use ARCore witha an app the app frezee/stop working.
+
 Google's ARCore on FP3+ is VERY experimental and can be VERY instable, I'm obviously not responsable on any damage on both hardware or software side.
+
 I don't know if this config can "brick" your phone. So you have to suppose it can.
+
 Also if you have problem you cannot ask at anyone, create a complete backup first to hack your FirePhone 3+.
 
 
