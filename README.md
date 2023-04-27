@@ -52,8 +52,7 @@ Then
 
 ARCore run, depth API disabled.
 Buggy and imprecise, need more calibration.
-
-If you use ARCore witha an app the app frezee/stop working.
+With this config I can play at PokémonGO with AR+ without crash.
 
 Google's ARCore on FP3+ is VERY experimental and can be VERY instable, I'm obviously not responsable on any damage on both hardware or software side.
 
