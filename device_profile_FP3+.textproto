@@ -22,23 +22,19 @@ cameras {
   calibrated_focal_length {
     # Focal length is measured in pixels.
     # f1.79 aperture https://en.wikipedia.org/wiki/F-number
-    # On FP3+ we have a wide-angle 84,2° so in pixel should be... (but is buggy and SURELY wrong)
-    # Focal = A/tan(a)
-    # A = 640/2 = 320, a = 84.2°/2 = 42.1°, which give Focal(x) =  103.0346 pixels.
-    # A = 480/2 = 240, a = 84.2°/2 = 42.1°, which give Focal(y) =  77.27595 pixels.
-    # ToDo: calculate with OpenCV camera calibration or other system
+    # On FP3+ we have a wide-angle 84,2°
     # https://learnopencv.com/camera-calibration-using-opencv/
     # https://docs.opencv.org/3.4/d4/d94/tutorial_camera_calibration.html
     # https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html
+    # For first calibration I have used boofCV
     # https://boofcv.org/index.php?title=Applications#Camera_Calibration
-    # It seems that I need a chessboard...
-    x: 512.0
-    y: 512.0
+    x: 490.36174868875696
+    y: 491.05467308763616
   }
   calibrated_principal_point {
-    # ToDo: verify with OpenCV camera calibration
-    x: 320.0
-    y: 240.0
+    # For first calibration I have used boofCV
+    x: 320.30753731196995
+    y: 238.84110117426735
   }
   distortion_poly3 {
     # Max compatibility profile values 0.0
@@ -125,7 +121,7 @@ cameras {
   camera_timebase_trust_level: TRUSTED_AS_BOOTTIME
   # Changing to IMAGE_METADATA will improve performance on most devices.
   # ToDo: Verify.
-  rolling_shutter_data_source: IMAGE_METADATA
+  rolling_shutter_data_source: DEVICE_PROFILE
   # FP3+ rear-facing camera should support depth API, since the Pixel 3a support it,
   # not clear if need other config... or better CPU or other hardware in addition.
   # ToDo: try DEPTH_API_SUPPORT_MODE_SUPPORTED
@@ -143,18 +139,15 @@ cameras {
   calibrated_height: 480
   calibrated_focal_length {
     # f2.0 aperture https://en.wikipedia.org/wiki/F-number
-    # Is a wide-angle 79,7° so in pixel should be... (but is buggy and SURELY wrong)
-    # Focal = A/tan(a)
-    # A = 640/2 = 320, a = 84.2°/2 = 39.85°, which give Focal(x) =  -209.6959 pixels.
-    # A = 480/2 = 240, a = 84.2°/2 = 39.85°, which give Focal(y) =  -157.2719 pixels.
-    # ToDo: calculate with OpenCV camera calibration or other system
+    # Is a wide-angle 79,7°
+    # For first calibration I have used boofCV
     # (Honestly I'm not interested in this sensor).
-    x: 512.0
-    y: 512.0
+    x: 496.6694779022604
+    y: 495.27435871040217
   }
   calibrated_principal_point {
-    x: 320.0
-    y: 240.0
+    x: 320.7293325152081
+    y: 244.31370952046186
   }
   distortion_poly3 {
     k0: 0.0
