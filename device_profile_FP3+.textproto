@@ -27,7 +27,7 @@ cameras {
     # https://learnopencv.com/camera-calibration-using-opencv/
     # https://docs.opencv.org/3.4/d4/d94/tutorial_camera_calibration.html
     # https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html
-	# For first calibration I have used boofCV with Brown Model
+    # For first calibration I have used boofCV with Brown Model
     # https://boofcv.org/index.php?title=Applications#Camera_Calibration
 	# ToDo: test also Kannala-Brandt Model, Universal Omni Model
     x: 490.36174868875696
@@ -35,20 +35,20 @@ cameras {
   }
   calibrated_principal_point {
     # For first calibration I have used boofCV with Brown Model
-	# ToDo: test also Kannala-Brandt Model, Universal Omni Model
+    # ToDo: test also Kannala-Brandt Model, Universal Omni Model
     x: 320.30753731196995
     y: 238.84110117426735
   }
   distortion_poly3 {
     # Max compatibility profile values 0.0
-	# https://en.wikipedia.org/wiki/Distortion_(optics)
-	# https://lensfun.github.io/calibration-tutorial/lens-distortion.html
+    # https://en.wikipedia.org/wiki/Distortion_(optics)
+    # https://lensfun.github.io/calibration-tutorial/lens-distortion.html
     # ToDo: Verify with lensfun with DistortionModel poly3.
-	# not actually supported https://wilson.bronger.org/lensfun_coverage.html
-	# ToDo: Upload calibration pictures https://wilson.bronger.org/calibration
-	# It seems also that can be done with Blender that will give k1=k0, k2=k1 and k3=k2 (I suppose)
-	# https://blender.stackexchange.com/questions/15620/how-to-determine-lens-undistortion-values-for-motion-tracking
-	# ToDo: Try to use Blender (that use algorithms based on OpenCV)
+    # not actually supported https://wilson.bronger.org/lensfun_coverage.html
+    # ToDo: Upload calibration pictures https://wilson.bronger.org/calibration
+    # It seems also that can be done with Blender that will give k1=k0, k2=k1 and k3=k2 (I suppose)
+    # https://blender.stackexchange.com/questions/15620/how-to-determine-lens-undistortion-values-for-motion-tracking
+    # ToDo: Try to use Blender (that use algorithms based on OpenCV)
     k0: 0.0
     k1: 0.0
     k2: 0.0
@@ -152,21 +152,21 @@ cameras {
     # Is a wide-angle 79,7°
     # For first calibration I have used boofCV with Brown Model
     # (Honestly I'm not interested in this sensor).
-	# ToDo: test also Kannala-Brandt Model, Universal Omni Model
+    # ToDo: test also Kannala-Brandt Model, Universal Omni Model
     x: 496.6694779022604
     y: 495.27435871040217
   }
   calibrated_principal_point {
     # For first calibration I have used boofCV with Brown Model
-	# ToDo: test also Kannala-Brandt Model, Universal Omni Model
+    # ToDo: test also Kannala-Brandt Model, Universal Omni Model
     x: 320.7293325152081
     y: 244.31370952046186
   }
   distortion_poly3 {
     # Max compatibility profile values 0.0
-	# https://lensfun.github.io/calibration-tutorial/lens-distortion.html
+    # https://lensfun.github.io/calibration-tutorial/lens-distortion.html
     # ToDo: Verify with lensfun with DistortionModel poly3.
-	# not actually supported https://wilson.bronger.org/lensfun_coverage.html
+    # not actually supported https://wilson.bronger.org/lensfun_coverage.html
     k0: 0.0
     k1: 0.0
     k2: 0.0
