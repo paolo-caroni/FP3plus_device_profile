@@ -1,0 +1,78 @@
+{
+    "device_brand": "Fairphone",
+    "device_model": "FP3",
+    "device_sdk": 33,
+    "device_release": "13",
+    "device_security": "2023-03-05",
+    "build_fingerprint": "Fairphone\/FP3\/FP3:11\/8901.4.A.0021.0\/gms-0b368514:user\/release-keys",
+    "arcore": {
+        "arcore_support": "UNSUPPORTED_DEVICE_NOT_CAPABLE"
+    },
+    "0": {
+        "lens_facing": "Rear-Facing",
+        "fov": "84.2",
+        "resolution": "4016x3016",
+        "physical_sensors": [],
+        "video_qualities": [
+            "480p",
+            "720p",
+            "1080p",
+            "2160p"
+        ],
+        "extensions": {
+            "Auto": {
+                "camera2": false,
+                "camerax": false
+            },
+            "Bokeh": {
+                "camera2": false,
+                "camerax": false
+            },
+            "HDR": {
+                "camera2": false,
+                "camerax": false
+            },
+            "Night": {
+                "camera2": false,
+                "camerax": false
+            },
+            "Face Retouch": {
+                "camera2": false,
+                "camerax": false
+            }
+        }
+    },
+    "1": {
+        "lens_facing": "Front-Facing",
+        "fov": "79.7",
+        "resolution": "4608x3456",
+        "physical_sensors": [],
+        "video_qualities": [
+            "480p",
+            "720p",
+            "1080p"
+        ],
+        "extensions": {
+            "Auto": {
+                "camera2": false,
+                "camerax": false
+            },
+            "Bokeh": {
+                "camera2": false,
+                "camerax": false
+            },
+            "HDR": {
+                "camera2": false,
+                "camerax": false
+            },
+            "Night": {
+                "camera2": false,
+                "camerax": false
+            },
+            "Face Retouch": {
+                "camera2": false,
+                "camerax": false
+            }
+        }
+    }
+}

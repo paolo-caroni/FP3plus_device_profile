@@ -1,0 +1,79 @@
+boofCV
+
+Brown Model:
+
+# Pinhole camera model with radial and tangential distortion
+# (fx,fy) = focal length, (cx,cy) = principle point, (width,height) = image shape
+# radial = radial distortion, (t1,t2) = tangential distortion
+
+pinhole:
+  fx: 496.6694779022604
+  fy: 495.27435871040217
+  cx: 320.7293325152081
+  cy: 244.31370952046186
+  width: 640
+  height: 480
+  skew: 0.0
+model: pinhole_radial_tangential
+radial_tangential:
+  radial:
+  - 0.14389298421298055
+  - -0.2970536093082505
+  t1: 0.0
+  t2: 0.0
+version: 0
+
+Kannala-Brandt Model:
+
+# A camera model for pinhole, wide angle, and fisheye cameras.
+# Kannala, J., and Brandt, S. S. "A generic camera model and calibration method for conventional,
+# wide-angle, and fish-eye lenses." IEEE transactions on pattern analysis and machine intelligence, 2006
+# (fx,fy) = focal length, (cx,cy) = principle point, (width,height) = image shape
+# Everything else is coefficients for different types of distortion
+
+pinhole:
+  fx: 498.4253802783918
+  fy: 496.9810306519155
+  cx: 320.8068119051799
+  cy: 244.33199219164584
+  width: 640
+  height: 480
+  skew: 0.0
+radial: []
+tangent: []
+tangent_trig: []
+radial_trig: []
+model: kannala_brandt
+version: 0
+symmetric:
+- 0.9974182593346272
+- 0.39658747377950315
+- 1.359534531518864
+- -8.847912166057348
+- 16.255554825724232
+
+Universal Omni Model:
+
+# Omnidirectional camera model with radial and tangential distortion
+# C. Mei, and P. Rives. "Single view point omnidirectional camera calibration from planar grids."  ICRA 2007
+# (fx,fy) = focal length, (cx,cy) = principle point, (width,height) = image shape
+# mirror_offset = offset mirror along z-axis in unit circle
+# radial = radial distortion, (t1,t2) = tangential distortion
+
+pinhole:
+  fx: 958.3316001892366
+  fy: 955.6270239761033
+  cx: 320.734729653403
+  cy: 244.29852261214802
+  width: 640
+  height: 480
+  skew: 0.0
+model: omnidirectional_universal
+radial_tangential:
+  radial:
+  - 1.5145276709613351
+  - -4.198470629143704
+  t1: 0.0
+  t2: 0.0
+version: 0
+mirror_offset: 0.9312406727418319

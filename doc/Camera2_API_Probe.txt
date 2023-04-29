@@ -1,0 +1,281 @@
+
+Model:FP3 (should be FP3+)
+Manufacturer:Fairphone
+Build:13
+SDK:33
+------------------------------------------
+Camera ID: 0
+Camera Facing: BACK
+Hardware Support Level:LEVEL_3
+Manual exposure:1
+Auto exposure:1
+Auto exposure, always flash:1
+Auto exposure, auto flash:1
+Auto exposure, auto flash, red eye reduction:1
+AE Lock:1
+Compensation Range: [-18, 18]
+Compensation Step: 1/6
+Target FPS  Range: [15, 15]
+Target FPS  Range: [7, 20]
+Target FPS  Range: [20, 20]
+Target FPS  Range: [24, 24]
+Target FPS  Range: [7, 30]
+Target FPS  Range: [30, 30]
+Manual focus:1
+Auto focus:1
+Auto focus macro:1
+Auto focus continuous picture:1
+Auto focus continuous video:1
+Auto focus EDOF:0
+White balance off:1
+Automatic white balance:1
+WB: cloudy day:1
+WB: daylight:1
+WB: fluorescent:1
+WB: incandescent:1
+WB: shade:1
+WB: twilight:1
+WB: warm fluorescent:1
+AWB Lock:1
+RawCapture:1
+BurstCapture:1
+availableCapability: BACKWARD_COMPATIBLE
+availableCapability: MANUAL_SENSOR
+availableCapability: MANUAL_POST_PROCESSING
+availableCapability: READ_SENSOR_SETTINGS
+availableCapability: BURST_CAPTURE
+availableCapability: PRIVATE_REPROCESSING
+availableCapability: YUV_REPROCESSING
+availableCapability: CONSTRAINED_HIGH_SPEED_VIDEO
+availableCapability: RAW
+Stabilization Mode: Video
+previewSize: 4000 * 3000 (4:3)
+previewSize: 3840 * 2160 (16:9)
+previewSize: 3264 * 2448 (4:3)
+previewSize: 3200 * 2400 (4:3)
+previewSize: 3168 * 1584 (2:1)
+previewSize: 2976 * 2976 (1:1)
+previewSize: 2592 * 1944 (4:3)
+previewSize: 2592 * 1296 (2:1)
+previewSize: 2304 * 1728 (4:3)
+previewSize: 2688 * 1512 (16:9)
+previewSize: 2048 * 1536 (4:3)
+previewSize: 2016 * 1008 (2:1)
+previewSize: 1920 * 1080 (16:9)
+previewSize: 2560 * 800 (16:5)
+previewSize: 1600 * 1200 (4:3)
+previewSize: 1440 * 1080 (4:3)
+previewSize: 1280 * 960 (4:3)
+previewSize: 1280 * 720 (16:9)
+previewSize: 1200 * 1200 (1:1)
+previewSize: 1280 * 480 (8:3)
+previewSize: 1280 * 400 (16:5)
+previewSize: 1024 * 768 (4:3)
+previewSize: 960 * 480 (2:1)
+previewSize: 800 * 600 (4:3)
+previewSize: 864 * 480 (9:5)
+previewSize: 720 * 480 (3:2)
+previewSize: 640 * 640 (1:1)
+previewSize: 640 * 480 (4:3)
+previewSize: 640 * 360 (16:9)
+previewSize: 640 * 320 (2:1)
+previewSize: 480 * 360 (4:3)
+previewSize: 480 * 320 (3:2)
+previewSize: 352 * 288 (11:9)
+previewSize: 320 * 240 (4:3)
+previewSize: 176 * 144 (11:9)
+previewSize: 160 * 120 (4:3)
+photoSize: 4000 * 3000 (4:3)
+photoSize: 3840 * 2160 (16:9)
+photoSize: 3264 * 2448 (4:3)
+photoSize: 3200 * 2400 (4:3)
+photoSize: 3168 * 1584 (2:1)
+photoSize: 2976 * 2976 (1:1)
+photoSize: 2592 * 1944 (4:3)
+photoSize: 2592 * 1296 (2:1)
+photoSize: 2304 * 1728 (4:3)
+photoSize: 2688 * 1512 (16:9)
+photoSize: 2048 * 1536 (4:3)
+photoSize: 2016 * 1008 (2:1)
+photoSize: 1920 * 1080 (16:9)
+photoSize: 2560 * 800 (16:5)
+photoSize: 1600 * 1200 (4:3)
+photoSize: 1440 * 1080 (4:3)
+photoSize: 1280 * 960 (4:3)
+photoSize: 1280 * 720 (16:9)
+photoSize: 1200 * 1200 (1:1)
+photoSize: 1280 * 480 (8:3)
+photoSize: 1280 * 400 (16:5)
+photoSize: 1024 * 768 (4:3)
+photoSize: 960 * 480 (2:1)
+photoSize: 800 * 600 (4:3)
+photoSize: 864 * 480 (9:5)
+photoSize: 720 * 480 (3:2)
+photoSize: 640 * 640 (1:1)
+photoSize: 640 * 480 (4:3)
+photoSize: 640 * 360 (16:9)
+photoSize: 640 * 320 (2:1)
+photoSize: 480 * 360 (4:3)
+photoSize: 480 * 320 (3:2)
+photoSize: 352 * 288 (11:9)
+photoSize: 320 * 240 (4:3)
+photoSize: 176 * 144 (11:9)
+photoSize: 160 * 120 (4:3)
+videoSize: 4000 * 3000 (4:3)
+videoSize: 3840 * 2160 (16:9)
+videoSize: 3264 * 2448 (4:3)
+videoSize: 3200 * 2400 (4:3)
+videoSize: 3168 * 1584 (2:1)
+videoSize: 2976 * 2976 (1:1)
+videoSize: 2592 * 1944 (4:3)
+videoSize: 2592 * 1296 (2:1)
+videoSize: 2304 * 1728 (4:3)
+videoSize: 2688 * 1512 (16:9)
+videoSize: 2048 * 1536 (4:3)
+videoSize: 2016 * 1008 (2:1)
+videoSize: 1920 * 1080 (16:9)
+videoSize: 2560 * 800 (16:5)
+videoSize: 1600 * 1200 (4:3)
+videoSize: 1440 * 1080 (4:3)
+videoSize: 1280 * 960 (4:3)
+videoSize: 1280 * 720 (16:9)
+videoSize: 1200 * 1200 (1:1)
+videoSize: 1280 * 480 (8:3)
+videoSize: 1280 * 400 (16:5)
+videoSize: 1024 * 768 (4:3)
+videoSize: 960 * 480 (2:1)
+videoSize: 800 * 600 (4:3)
+videoSize: 864 * 480 (9:5)
+videoSize: 720 * 480 (3:2)
+videoSize: 640 * 640 (1:1)
+videoSize: 640 * 480 (4:3)
+videoSize: 640 * 360 (16:9)
+videoSize: 640 * 320 (2:1)
+videoSize: 480 * 360 (4:3)
+videoSize: 480 * 320 (3:2)
+videoSize: 352 * 288 (11:9)
+videoSize: 320 * 240 (4:3)
+videoSize: 176 * 144 (11:9)
+videoSize: 160 * 120 (4:3)
+------------------------------------------
+Camera ID: 1
+Camera Facing: FRONT
+Hardware Support Level:LIMITED
+Manual exposure:1
+Auto exposure:1
+Auto exposure, always flash:0
+Auto exposure, auto flash:0
+Auto exposure, auto flash, red eye reduction:0
+AE Lock:1
+Compensation Range: [-18, 18]
+Compensation Step: 1/6
+Target FPS  Range: [15, 15]
+Target FPS  Range: [20, 20]
+Target FPS  Range: [24, 24]
+Target FPS  Range: [10, 30]
+Target FPS  Range: [30, 30]
+Manual focus:1
+Auto focus:0
+Auto focus macro:0
+Auto focus continuous picture:0
+Auto focus continuous video:0
+Auto focus EDOF:0
+White balance off:1
+Automatic white balance:1
+WB: cloudy day:1
+WB: daylight:1
+WB: fluorescent:1
+WB: incandescent:1
+WB: shade:1
+WB: twilight:1
+WB: warm fluorescent:1
+AWB Lock:1
+RawCapture:1
+BurstCapture:1
+availableCapability: BACKWARD_COMPATIBLE
+availableCapability: MANUAL_SENSOR
+availableCapability: MANUAL_POST_PROCESSING
+availableCapability: READ_SENSOR_SETTINGS
+availableCapability: BURST_CAPTURE
+availableCapability: PRIVATE_REPROCESSING
+availableCapability: YUV_REPROCESSING
+availableCapability: RAW
+Stabilization Mode: Video
+previewSize: 2304 * 1728 (4:3)
+previewSize: 2048 * 1536 (4:3)
+previewSize: 2016 * 1008 (2:1)
+previewSize: 1920 * 1080 (16:9)
+previewSize: 1600 * 1200 (4:3)
+previewSize: 1440 * 1080 (4:3)
+previewSize: 1280 * 960 (4:3)
+previewSize: 1280 * 720 (16:9)
+previewSize: 1200 * 1200 (1:1)
+previewSize: 1280 * 480 (8:3)
+previewSize: 1280 * 400 (16:5)
+previewSize: 1024 * 768 (4:3)
+previewSize: 960 * 480 (2:1)
+previewSize: 800 * 600 (4:3)
+previewSize: 864 * 480 (9:5)
+previewSize: 720 * 480 (3:2)
+previewSize: 640 * 640 (1:1)
+previewSize: 640 * 480 (4:3)
+previewSize: 640 * 360 (16:9)
+previewSize: 640 * 320 (2:1)
+previewSize: 480 * 360 (4:3)
+previewSize: 480 * 320 (3:2)
+previewSize: 352 * 288 (11:9)
+previewSize: 320 * 240 (4:3)
+previewSize: 176 * 144 (11:9)
+previewSize: 160 * 120 (4:3)
+photoSize: 2304 * 1728 (4:3)
+photoSize: 2048 * 1536 (4:3)
+photoSize: 2016 * 1008 (2:1)
+photoSize: 1920 * 1080 (16:9)
+photoSize: 1600 * 1200 (4:3)
+photoSize: 1440 * 1080 (4:3)
+photoSize: 1280 * 960 (4:3)
+photoSize: 1280 * 720 (16:9)
+photoSize: 1200 * 1200 (1:1)
+photoSize: 1280 * 480 (8:3)
+photoSize: 1280 * 400 (16:5)
+photoSize: 1024 * 768 (4:3)
+photoSize: 960 * 480 (2:1)
+photoSize: 800 * 600 (4:3)
+photoSize: 864 * 480 (9:5)
+photoSize: 720 * 480 (3:2)
+photoSize: 640 * 640 (1:1)
+photoSize: 640 * 480 (4:3)
+photoSize: 640 * 360 (16:9)
+photoSize: 640 * 320 (2:1)
+photoSize: 480 * 360 (4:3)
+photoSize: 480 * 320 (3:2)
+photoSize: 352 * 288 (11:9)
+photoSize: 320 * 240 (4:3)
+photoSize: 176 * 144 (11:9)
+photoSize: 160 * 120 (4:3)
+videoSize: 2304 * 1728 (4:3)
+videoSize: 2048 * 1536 (4:3)
+videoSize: 2016 * 1008 (2:1)
+videoSize: 1920 * 1080 (16:9)
+videoSize: 1600 * 1200 (4:3)
+videoSize: 1440 * 1080 (4:3)
+videoSize: 1280 * 960 (4:3)
+videoSize: 1280 * 720 (16:9)
+videoSize: 1200 * 1200 (1:1)
+videoSize: 1280 * 480 (8:3)
+videoSize: 1280 * 400 (16:5)
+videoSize: 1024 * 768 (4:3)
+videoSize: 960 * 480 (2:1)
+videoSize: 800 * 600 (4:3)
+videoSize: 864 * 480 (9:5)
+videoSize: 720 * 480 (3:2)
+videoSize: 640 * 640 (1:1)
+videoSize: 640 * 480 (4:3)
+videoSize: 640 * 360 (16:9)
+videoSize: 640 * 320 (2:1)
+videoSize: 480 * 360 (4:3)
+videoSize: 480 * 320 (3:2)
+videoSize: 352 * 288 (11:9)
+videoSize: 320 * 240 (4:3)
+videoSize: 176 * 144 (11:9)
+videoSize: 160 * 120 (4:3)
